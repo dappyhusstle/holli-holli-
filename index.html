@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hollister Rewards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f5f5f5;
+  color: #1a1a1a;
+  min-height: 100vh;
+  padding-bottom: 72px;
+}
+.wrapper {
+  max-width: 430px;
+  margin: 0 auto;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+/* Header bar */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  border-bottom: 2px solid #1a1a1a;
+}
+.header-step {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  border-bottom: 2px solid #1a1a1a;
+  padding-bottom: 2px;
+}
+.header-label {
+  font-size: 13px;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Brand */
+.brand-bar {
+  padding: 20px 24px 16px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+.brand-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+/* Hero */
+.hero {
+  padding: 32px 24px 24px;
+}
+.hero-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.hero-sub {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+.hero-sub span {
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Gift card */
+.card-section {
+  padding: 0 24px 28px;
+}
+.gift-card {
+  background: linear-gradient(135deg, #1a2b49 0%, #0f1a2e 100%);
+  border-radius: 14px;
+  padding: 24px 24px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.gift-card::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+.card-brand {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.card-chip {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  width: 36px;
+  height: 26px;
+  background: linear-gradient(135deg, #c9a96e 0%, #d4b87a 50%, #b8944f 100%);
+  border-radius: 4px;
+}
+.card-amount {
+  font-family: 'DM Serif Display', serif;
+  font-size: 52px;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.card-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Steps */
+.steps-section {
+  padding: 8px 24px 24px;
+}
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+}
+.step:last-child {
+  border-bottom: none;
+}
+.step-num {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border: 1.5px solid #ccc;
+  color: #1a1a1a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+.step-content {
+  padding-top: 2px;
+}
+.step-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 3px;
+}
+.step-desc {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.4;
+}
+
+/* CTA */
+.cta-section {
+  padding: 4px 24px 12px;
+  text-align: center;
+}
+.cta-btn {
+  display: block;
+  width: 100%;
+  background: #1a1a1a;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 16px 24px;
+  border-radius: 8px;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+.cta-sub {
+  font-size: 12px;
+  color: #999;
+  margin-top: 12px;
+}
+
+/* FAQ */
+.faq-section {
+  padding: 32px 24px 20px;
+}
+.faq-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+.faq-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+  cursor: default;
+}
+.faq-q {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+.faq-plus {
+  font-size: 18px;
+  color: #999;
+  font-weight: 300;
+}
+
+/* Disclaimer */
+.disclaimer {
+  padding: 24px 24px 32px;
+  border-top: 1px solid #eee;
+}
+.disclaimer p {
+  font-size: 11px;
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Sticky bottom CTA */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.sticky-inner {
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+}
+.sticky-btn {
+  display: block;
+  width: 100%;
+  background: #1a1a1a;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px 24px;
+  border-radius: 8px;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <span class="header-step">Step 2 of 2</span>
+    <span class="header-label">Complete your registration</span>
+  </div>
+
+  <div class="brand-bar">
+    <div class="brand-name">Hollister</div>
+  </div>
+
+  <div class="hero">
+    <h1 class="hero-title">Finish claiming your $500 to spend at Hollister</h1>
+    <p class="hero-sub">You're almost there. <span>Follow the four steps below</span> to qualify for your Hollister reward.</p>
+  </div>
+
+  <div class="card-section">
+    <div class="gift-card">
+      <div class="card-brand">Hollister</div>
+      <div class="card-chip"></div>
+      <div class="card-amount">$500</div>
+      <div class="card-label">Shopping reward</div>
+    </div>
+  </div>
+
+  <div class="steps-section">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">Tap "Claim my $500" below</div>
+        <div class="step-desc">It opens the secure sign-up page.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">Enter your email and basic info</div>
+        <div class="step-desc">Use an email you check. Updates on your reward go there.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">Complete 3 to 5 sponsored deals</div>
+        <div class="step-desc">You pick which ones. Each deal lists its own steps.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title">Get your $500 to spend at Hollister</div>
+        <div class="step-desc">Jeans, hoodies, fragrance, whatever you want.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <a href="https://linkthem.net/aff_c?offer_id=2768&aff_id=23543&source=holli%20holli" class="cta-btn">Claim my $500</a>
+    <p class="cta-sub">No cost to sign up. Open to the US, Canada, UK and Australia.</p>
+  </div>
+
+  <div class="faq-section">
+    <div class="faq-title">Questions</div>
+
+    <div class="faq-item">
+      <span class="faq-q">What counts as a sponsored deal?</span>
+      <span class="faq-plus">+</span>
+    </div>
+
+    <div class="faq-item">
+      <span class="faq-q">Do I have to buy anything?</span>
+      <span class="faq-plus">+</span>
+    </div>
+
+    <div class="faq-item">
+      <span class="faq-q">How long does it take?</span>
+      <span class="faq-plus">+</span>
+    </div>
+
+    <div class="faq-item">
+      <span class="faq-q">Who can claim this?</span>
+      <span class="faq-plus">+</span>
+    </div>
+
+    <div class="faq-item">
+      <span class="faq-q">Can I do this on my phone or computer?</span>
+      <span class="faq-plus">+</span>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <p>This page is not run by, sponsored by, or affiliated with Hollister. Hollister is a trademark of its respective owner and is used here only to describe the reward.</p>
+    <p>The $500 reward is provided through a third-party promotion. Eligibility, deal requirements, and reward terms are set by the sponsor and shown on the sign-up page.</p>
+  </div>
+
+</div>
+
+<div class="sticky-cta">
+  <div class="sticky-inner">
+    <a href="https://linkthem.net/aff_c?offer_id=2768&aff_id=23543&source=holli%20holli" class="sticky-btn">Claim my $500</a>
+  </div>
+</div>
+
+</body>
+</html>
